@@ -1,2 +1,2 @@
-# regulations.github.io
+# regulations
 asdf
