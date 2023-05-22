@@ -9,14 +9,19 @@
     <h1></h1>
     <div id="plot"></div>
     <py-config>
+        packages = ["request", "bs4"]
         [[fetch]]
         files = ["./test.py"]
     </py-config>
     <py-script>
-	from test import testin
-	tt = testin('qqq')
+	from urllib.request import urlopen
+	import BeautifulSoup
+	import re
+	from cr import crdb
 	
-	print(tt)
+	cid, cname = crdb("https://www.db.yugioh-card.com/yugiohdb/member_deck.action?ope=1&cgid=53230c63f846279a61029b932c019279&dno=9&request_locale=ko")
+	
+	print(cname)
 	
     </py-script>
   </body>
