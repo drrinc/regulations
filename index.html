@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<iframe src="https://www.db.yugioh-card.com/yugiohdb/member_deck.action?ope=1&cgid=1b7bcf3d944a00b05bf4972baffe9cca&dno=242&request_locale=ja" title="내용"></iframe>
-</body>
+    <head>
+      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <py-env>
+        - numpy
+        - matplotlib
+      </py-env>
+    </head>
+
+  <body>
+    <h1>Let's plot random numbers</h1>
+    <div id="plot"></div>
+    <py-script output="plot">
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.random.randn(1000)
+y = np.random.randn(1000)
+
+fig, ax = plt.subplots()
+ax.scatter(x, y)
+fig
+    </py-script>
+  </body>
 </html>
