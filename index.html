@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-      <py-env>
-        - request
-        - paths:
-	- ./cr.py
-	- ./bs4/__init__.py
-      </py-env>
+      <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+      <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     </head>
 
   <body>
-    <h1>始まりのデッキ改</h1>
+    <h1></h1>
     <div id="plot"></div>
+    <py-config>
+        [[fetch]]
+        files = ["./test.py"]
+    </py-config>
     <py-script>
-	from urllib.request import urlopen
-	import re
-	from cr import crdb
-	from bs4 import BeautifulSoup
+	from test import testin
+	tt = testin('qqq')
 	
-	cid, cname = crdb("https://www.db.yugioh-card.com/yugiohdb/member_deck.action?ope=1&cgid=53230c63f846279a61029b932c019279&dno=9&request_locale=ko")
-	
-	print(cname)
+	print(tt)
 	
     </py-script>
   </body>
