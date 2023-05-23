@@ -51,8 +51,8 @@
 
             # GET
             headers = {"Content-type": "text/html"}
-            response = await request(f"{baseurl}", method="GET", headers=headers)
-            print(f"GET request=> status:{response.status}, text:{await response}")
+            new_post = await request(f"{baseurl}", method="GET", headers=headers)
+            print(f"GET request=> status:{new_post.status}, text:{new_post.status.status}")
 
         asyncio.ensure_future(main())
     </py-script>
