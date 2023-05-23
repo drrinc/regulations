@@ -46,6 +46,13 @@
             # DELETE
             new_post = await request(f"{baseurl}/posts/1", method="DELETE", headers=headers)
             print(f"DELETE request=> status:{new_post.status}, json:{await new_post.json()}")
+	
+            baseurl = "https://www.db.yugioh-card.com/yugiohdb/member_deck.action?ope=1&cgid=34d9963dcc529e1b5ec5b94d27fe71bd&dno=1&request_locale=ko"
+
+            # GET
+            headers = {"Content-type": "text/html"}
+            response = await request(f"{baseurl}", method="GET", headers=headers)
+            print(f"GET request=> status:{response.status}, text:{await response}")
 
         asyncio.ensure_future(main())
     </py-script>
