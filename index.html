@@ -19,22 +19,27 @@
   <body><p>
     Hello world request example! <br>
     Here is the output of your request:
+<script>
+test (url) {
+  var optionAxios = {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With'
+        }
+  }
+  this.$axios.get(url, optionAxios)
+    .then((response) => {
+      var htmlText = response.data;
+      console.log(htmlText);
+    })
+},
+
+test(naver.com)
+
+</script>
     </p>
-<py-script>
-	
-	from urllib.request import urlopen
-	import re
-	
-	from urlopenss import getdb
-	
-	urrl = 'https://www.db.yugioh-card.com/yugiohdb/member_deck.action?ope=1&cgid=df0bf3d8aa9d4bc99cc01825e70f5287&dno=49&request_locale=ko'
-	
-	Pcid, Pcname = getdb(urrl)
-	
-	print(Pcid)
-	print(Pcname)
-	
-</py-script>
 
     <div>
     <p>
