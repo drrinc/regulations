@@ -11,7 +11,7 @@
 
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <py-config>
-      packages = ["pandas", "lxml"]
+      packages = ["pandas", "lxml", "html5lib", "BeautifulSoup4"]
     </py-config>
   </head>
 
@@ -22,10 +22,11 @@
 <py-script>
 
 import pandas as pd
+from pyodide.http import open_url
 
 
-url = 'https://finance.naver.com/sise/lastsearch2.nhn'
-dfs = pd.read_html(url, encoding='utf8')
+url = 'https://www.db.yugioh-card.com/yugiohdb/member_deck.action?ope=1&cgid=67a9eb9765df4e418c30f98963e55df2&dno=40&request_locale=ko'
+dfs = pd.read_html(open_url(url))
 print(dfs)
 
 
