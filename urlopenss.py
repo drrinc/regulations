@@ -2,7 +2,7 @@ from urllib.request import urlopen
 import re
 
 
-def getdb(url: str):
+def getdb(url):
 
     html = urlopen(url)
     htmlread = html.read().decode('utf-8')
