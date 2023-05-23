@@ -4,42 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <title>db</title>
+    <title>GET, POST, PUT, DELETE example</title>
 
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
 
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-<py-config>
-	[[fetch]]
-	files = ["/urlopenss.py"]
-</py-config>
+    <py-config>
+      packages = ["pandas", "lxml"]
+    </py-config>
   </head>
 
   <body><p>
     Hello world request example! <br>
     Here is the output of your request:
-<script>
-test (url) {
-  var optionAxios = {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With'
-        }
-  }
-  this.$axios.get(url, optionAxios)
-    .then((response) => {
-      var htmlText = response.data;
-      console.log(htmlText);
-    })
-},
-
-test(naver.com)
-
-</script>
     </p>
+<py-script>
+
+import pandas as pd
+
+
+url = 'https://finance.naver.com/sise/lastsearch2.nhn'
+dfs = pd.read_html(url, encoding='utf8')
+print(dfs)
+
+
+
+</py-script>
 
     <div>
     <p>
