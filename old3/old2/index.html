@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+<div id="cards"></div>
+<script>
+
+var url = "http://www.kyobobook.co.kr/bestSellerNew/bestseller.laf?orderClick=d79"
+
+$.getJSON(url + "?callback=?", function(data){
+    console.log('getJSON', data);
+});
+
+</script>
+  </body>
+</html>
